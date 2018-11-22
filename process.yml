@@ -1,0 +1,3 @@
+apps:
+  - script   : app/src/index.js
+  - name     : "initproject"

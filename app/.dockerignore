@@ -1,0 +1,9 @@
+node_modules
+lib
+tests
+.eslint.rc
+coverage
+docker-compose.yml
+Dockerfile
+.git
+.gitignore
