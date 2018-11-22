@@ -13,5 +13,5 @@ WORKDIR /app
 ARG NODE_ENV=test
 ENV NODE_ENV $NODE_ENV
 
-# Start process.yml
+# Start process.yml yarn prepare & yarn start
 CMD ["pm2-docker","start", "process.yml"]
