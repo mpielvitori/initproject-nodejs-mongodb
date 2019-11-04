@@ -2,20 +2,16 @@
   "name": "initproject-nodejs",
   "version": "1.0.0",
   "description": "Init project for nodejs/mongodb app",
-  "main": ".eslintrc.js",
+  "type": "module",
   "directories": {
     "lib": "lib",
     "test": "tests"
   },
   "scripts": {
     "test": "./node_modules/.bin/jest",
-    "build": "rm -rf lib/**; ./node_modules/.bin/babel src --out-dir lib --copy-files",
     "lint": "./node_modules/.bin/eslint --fix src",
-    "watch": "./node_modules/.bin/babel-watch src/index.js",
-    "prepare": "npm run build",
-    "start-local": "./node_modules/.bin/babel-node src/index.js start",
-    "start": "node lib/index.js start",
-    "start-watch": "npm run watch"
+    "start": "node --experimental-modules src/index.js start",
+    "start-watch": "node --experimental-modules run watch"
   },
   "keywords": [
     "nodejs",
@@ -25,14 +21,6 @@
   "author": "mpielvitori",
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-watch": "^2.0.7",
     "eslint": "^4.15.0",
     "eslint-config-recommended": "^2.0.0",
     "eslint-plugin-jest": "^21.6.2",
@@ -42,10 +30,9 @@
     "jest-spec-reporter": "^1.0.4"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0",
     "express": "^4.16.3",
     "mongoose": "^5.0.11",
-    "pm2": "^3.2.2"
+    "body-parser": "=1.19.0"
   },
   "jest": {
     "collectCoverage": true,

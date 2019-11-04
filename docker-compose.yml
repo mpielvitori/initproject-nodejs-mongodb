@@ -1,24 +1,24 @@
-version: '3'
+version: '2'
 services:
   nodeops:
-    build: ./pm2-docker-alpine-master
+    build: ./app
     container_name: node-initproject
     hostname: 'node-initproject'
     networks:
-      - initproject.net
+    - initproject.net
     volumes:
-     - ./:/app
+    - ./app/src:/app/src
     ports:
-      - 3000:3000
-#  mongo-3-4-4:
-#    build: ./mongo-3-4-4
-#    container_name: mongo-3-4-4-initproject
-#    hostname: 'mongo-3-4-4-initproject'
-#    volumes:
-#     - /data/db:/data/db
-#     - /var/lib/mongodb:/var/lib/mongodb
-#    networks:
-#      - initproject.net
+    - 3000:3000
+  # mongo-3-4-4:
+  #   build: ./mongo-3-4-4
+  #   container_name: mongo-3-4-4-initproject
+  #   hostname: 'mongo-3-4-4-initproject'
+  #   volumes:
+  #   - /data/db:/data/db
+  #   - /var/lib/mongodb:/var/lib/mongodb
+  #   networks:
+  #   - initproject.net
 networks:
   initproject.net:
     driver: bridge

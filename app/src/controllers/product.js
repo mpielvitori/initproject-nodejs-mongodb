@@ -1,3 +1,3 @@
-exports.test = function (req, res) {
-    res.send('Hello!');
+export default (req, res) => {
+  res.send('Hello!');
 };

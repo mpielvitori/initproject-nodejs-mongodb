@@ -1,16 +1,18 @@
 module.exports = {
-    parser: 'babel-eslint',
-    env: {
-        node: true
-    },
-    extends: [
-        "eslint:recommended"
+  env: {
+      node: true
+  },
+  extends: [
+      "eslint:recommended"
+  ],
+  parserOptions: {
+      ecmaVersion: 8
+  },
+  rules: {
+    "import/extensions": [
+      "error", "always", {ignorePackages: true}
     ],
-    parserOptions: {
-        ecmaVersion: 8
-    },
-    rules: {
-        "padded-blocks": 0,
-        "no-constant-condition": "error",
-    }
+    "padded-blocks": 0,
+    "no-constant-condition": "error",
+  }
 };
