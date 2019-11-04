@@ -2,17 +2,12 @@ module.exports = {
   env: {
       node: true
   },
-  extends: [
-      "eslint:recommended"
-  ],
-  parserOptions: {
-      ecmaVersion: 8
-  },
+  plugins: ['jest'],
+  extends: ['eslint:recommended', 'plugin:jest/recommended', 'airbnb-base'],
   rules: {
     "import/extensions": [
       "error", "always", {ignorePackages: true}
     ],
-    "padded-blocks": 0,
     "no-constant-condition": "error",
   }
 };
