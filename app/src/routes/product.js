@@ -1,10 +1,11 @@
 /* eslint-disable import/extensions */
 import express from 'express';
 
-import productService from '../controllers/product.js';
+import { getProducts, createProduct } from '../controllers/product.js';
 
 const router = express.Router();
 
-router.get('/hello', productService);
+router.get('/', getProducts);
+router.post('/', createProduct);
 
 export default router;

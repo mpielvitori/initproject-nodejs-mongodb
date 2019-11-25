@@ -1,20 +1,23 @@
 /* eslint-disable import/extensions */
 import express from 'express';
 import bodyParser from 'body-parser';
-
+import config from 'config';
+import mongoose from 'mongoose';
 import product from './routes/product.js';
 
 const app = express();
 
 // Set up mongoose connection
-// const mongoose = require('mongoose');
-// const dev_db_url =
-// 'mongodb://someuser:abcd1234@ds123619.mlab.com:23619/productstutorial';
-// const mongoDB = process.env.MONGODB_URI || dev_db_url;
-// mongoose.connect(mongoDB);
-// mongoose.Promise = global.Promise;
-// const db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+console.log('DB!!! ', config.dbUri);
+mongoose.connect(
+  config.dbUri,
+  {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  },
+).then(() => console.log('MongoDB Connected'))
+  .catch((err) => console.log('MongoDB connection error ', err));
+mongoose.Promise = global.Promise;
 
 app.use(bodyParser.json());
 app.use(bodyParser.text());

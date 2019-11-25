@@ -1,6 +1,6 @@
 FROM node:13.1.0-alpine3.10
 
-COPY ./ /app/
+COPY package.json /app/
 
 WORKDIR /app
 
@@ -20,5 +20,7 @@ ENV NODE_ENV $NODE_ENV
 COPY ./entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
+
+COPY ./ /app/
 
 ENTRYPOINT ["/entrypoint.sh"]

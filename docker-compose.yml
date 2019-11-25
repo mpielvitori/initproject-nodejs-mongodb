@@ -10,15 +10,19 @@ services:
     - ./app/src:/app/src
     ports:
     - 3000:3000
-  # mongo-3-4-4:
-  #   build: ./mongo-3-4-4
-  #   container_name: mongo-3-4-4-initproject
-  #   hostname: 'mongo-3-4-4-initproject'
-  #   volumes:
-  #   - /data/db:/data/db
-  #   - /var/lib/mongodb:/var/lib/mongodb
-  #   networks:
-  #   - initproject.net
+    depends_on:
+    - mongodb
+  mongodb:
+    build: ./mongodb
+    container_name: mongodb-initproject
+    hostname: 'mongodb-initproject'
+    volumes:
+    - ./data/db:/data/db
+    # - /var/lib/mongodb:/var/lib/mongodb
+    networks:
+    - initproject.net
+    ports:
+    - "27017:27017"
 networks:
   initproject.net:
     driver: bridge

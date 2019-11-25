@@ -7,10 +7,19 @@
 
 ###### Build environment and start app
 ```sh
-docker-compose up
+docker-compose up --build
 ```
 
 ### Usage
-```sh
-http://localhost:3000/product/hello
+###### Create product
+**URL** : `http://localhost:3000/product/`
+**Method** : `POST`
+**Data example**
+```json
+{
+    "name": "Wood"
+}
 ```
+###### Get products
+**URL** : `http://localhost:3000/product/`
+**Method** : `GET`
