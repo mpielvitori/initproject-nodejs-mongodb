@@ -1,6 +1,6 @@
 # Simple app environment
 
-![](https://img.shields.io/badge/node-v12.13.0-brightgreen.svg) ![](https://img.shields.io/badge/mongodb-v3.4.4-brightgreen.svg) ![](https://img.shields.io/badge/ECMAScript-brightgreen.svg)
+![](https://img.shields.io/badge/node-v13.1.0-brightgreen.svg) ![](https://img.shields.io/badge/mongodb-v3.4.4-brightgreen.svg) ![](https://img.shields.io/badge/ECMAScript-brightgreen.svg)
 
 
 [![MP](https://sistemaglobal.com.ar/assets/images/logoTeckelBit.png)](http://mpielvitori.github.io/)
