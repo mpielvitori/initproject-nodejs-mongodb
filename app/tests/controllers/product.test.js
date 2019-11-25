@@ -1,5 +1,6 @@
+/* eslint-disable import/extensions */
 
-import * as productController from '../../src/controllers/product';
+import * as productController from '../../src/controllers/product.js';
 
 describe('Product test', () => {
   test('simple test', async () => {

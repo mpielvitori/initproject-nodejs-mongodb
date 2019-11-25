@@ -9,8 +9,10 @@
   },
   "scripts": {
     "lint": "eslint ./",
-    "test": "jest --fix src",
-    "start": "node --experimental-modules src/index.js start"
+    "test": "jest ./src",
+    "test-coverage": "jest --coverage",
+    "start": "node --experimental-modules ./src/index.js start",
+    "start-dev": "nodemon --experimental-modules ./src/index.js"
   },
   "keywords": [
     "nodejs",
@@ -24,7 +26,8 @@
     "eslint-config-airbnb": "18.0.1",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jest": "22.15.2",
-    "jest": "24.8.0"
+    "jest": "24.8.0",
+    "nodemon": "2.0.1"
   },
   "dependencies": {
     "express": "4.17.1",

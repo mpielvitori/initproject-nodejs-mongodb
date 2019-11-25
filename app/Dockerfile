@@ -1,10 +1,15 @@
-FROM node:12.13.0-alpine
+FROM node:13.1.0-alpine3.10
 
 COPY ./ /app/
 
 WORKDIR /app
 
+ENV NODEJS_DEBUG_PORT=9099
+
+EXPOSE ${NODEJS_DEBUG_PORT}
+
 RUN npm i \
+  && npm install -g nodemon \
   && npm cache clean --force
 
 EXPOSE 3000
@@ -12,4 +17,8 @@ EXPOSE 3000
 ARG NODE_ENV=development
 ENV NODE_ENV $NODE_ENV
 
-CMD ["npm", "start"]
+COPY ./entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
