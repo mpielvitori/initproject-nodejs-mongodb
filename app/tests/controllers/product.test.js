@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-
+// TODO not working with import -> https://github.com/facebook/jest/issues/9430
 import * as productController from '../../src/controllers/product.js';
 
 describe('Product test', () => {
