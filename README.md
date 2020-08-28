@@ -23,3 +23,6 @@ docker-compose up --build
 ###### Get products
 **URL** : `http://localhost:3000/product/`
 **Method** : `GET`
+
+## Not working
+* Tests are not working using jest and ESM
